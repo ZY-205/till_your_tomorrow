@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0vbb7yx2ormk"]
+
+[ext_resource type="Script" uid="uid://bu0n2jnd5mtat" path="res://scenes/ui/ui.gd" id="1_g5kmx"]
+[ext_resource type="Theme" uid="uid://cfohgl17ryjkp" path="res://dialogue/dialogue_balloon_theme.tres" id="2_aac20"]
+[ext_resource type="Texture2D" uid="uid://deq84o67p6hsl" path="res://assets/ui/base_ui.png" id="2_g5kmx"]
+[ext_resource type="FontFile" uid="uid://dxvectj5qwd1j" path="res://assets/ui/fonts/zx_palm.ttf" id="3_g5kmx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dwhk"]
+atlas = ExtResource("2_g5kmx")
+region = Rect2(434, 299, 271, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfayw"]
+atlas = ExtResource("2_g5kmx")
+region = Rect2(434, 275, 271, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5kmx"]
+atlas = ExtResource("2_g5kmx")
+region = Rect2(436, 326, 134, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vp6q"]
+atlas = ExtResource("2_g5kmx")
+region = Rect2(436, 316, 134, 7)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_g5kmx")
+
+[node name="xuetiao" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 273.0
+offset_bottom = 19.0
+value = 100.0
+texture_under = SubResource("AtlasTexture_0dwhk")
+texture_progress = SubResource("AtlasTexture_pfayw")
+
+[node name="atb" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = 3.0
+offset_top = 21.0
+offset_right = 137.0
+offset_bottom = 61.0
+texture_under = SubResource("AtlasTexture_g5kmx")
+texture_progress = SubResource("AtlasTexture_7vp6q")
+
+[node name="Meun" type="Panel" parent="."]
+visible = false
+z_index = 5
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -85.0
+offset_right = 82.5
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_aac20")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Meun"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -33.0
+offset_right = 21.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="save" type="Button" parent="Meun/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_aac20")
+theme_override_fonts/font = ExtResource("3_g5kmx")
+theme_override_font_sizes/font_size = 30
+text = "保存"
+
+[node name="load" type="Button" parent="Meun/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme = ExtResource("2_aac20")
+theme_override_fonts/font = ExtResource("3_g5kmx")
+theme_override_font_sizes/font_size = 30
+text = "加载
+"
+
+[node name="quit" type="Button" parent="Meun/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme = ExtResource("2_aac20")
+theme_override_fonts/font = ExtResource("3_g5kmx")
+theme_override_font_sizes/font_size = 30
+text = "退出"
+
+[connection signal="pressed" from="Meun/VBoxContainer/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Meun/VBoxContainer/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Meun/VBoxContainer/quit" to="." method="_on_quit_pressed"]

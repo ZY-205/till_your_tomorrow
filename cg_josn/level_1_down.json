@@ -1,0 +1,23 @@
+{
+	"scene":"/root/level_1_down/",
+	"characters":["partner_D","partner_D/Camera2D","player"],
+	"content":[
+		{"stage":4,
+		"action":[
+			{"who":"partner_D/Camera2D","action":"do","what":"start_shake","parameter":[0.5,10000],"timekeep":0},
+			{"who":"partner_D","action":"do","what":"play","parameter":["Injured_D"],"timekeep":0},
+			{"who":"player","action":"do","what":"play","parameter":["Player_death"],"timekeep":0},
+			{"who":"partner_D","action":"do","what":"move","parameter":[60,0,8],"timekeep":0},
+			{"who":"","action":"wait","what":"","parameter":[""],"timekeep":8},
+			{"who":"partner_D","action":"do","what":"stop","parameter":[],"timekeep":0},
+			]},
+		{"stage":5,
+		"action":[
+			{"who":"partner_D/Camera2D","action":"do","what":"start_shake","parameter":[0,10],"timekeep":0},
+			{"who":"partner_D","action":"do","what":"stopmove","parameter":[],"timekeep":0},
+			{"who":"partner_D","action":"do","what":"play","parameter":["Idle_D_weapon"],"timekeep":0},
+			{"who":"player","action":"do","what":"play","parameter":["Player_idle"],"timekeep":0},
+			{"who":"partner_D","action":"set","what":["global_position.x","global_position.y"],"parameter":[1100,1000],"timekeep":0},
+			]},
+	]
+}

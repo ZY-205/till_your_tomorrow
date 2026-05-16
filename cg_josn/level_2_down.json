@@ -1,0 +1,13 @@
+{
+	"scene":"/root/level_2/air_wall/air_wall/",
+	"characters":["left","right","top","down"],
+	"content":[
+		{"stage":6,
+		"action":[
+			{"who":"left","action":"set","what":["disabled"],"parameter":["true"],"timekeep":0},
+			{"who":"top","action":"set","what":["disabled"],"parameter":["true"],"timekeep":0},
+			{"who":"right","action":"set","what":["disabled"],"parameter":["true"],"timekeep":0},
+			{"who":"down","action":"set","what":["disabled"],"parameter":["true"],"timekeep":0},
+			]},
+	]
+}

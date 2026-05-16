@@ -1,0 +1,14 @@
+~ start
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_D)
+溯风: [speed=0.5]前面就是“终焉”的领地了，今天大家好好休息，明天去附近的村子做最后的整备。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_C)
+炎灼烬: [speed=0.5]这一路走来，连魔物都没见到几只，似乎有些平常的过头了。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_B)
+芙伊鸢: [speed=0.5]确实是有些反常，希望不要出什么意外吧。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_D)
+溯风: [speed=0.5]别多想了，早些休息吧。
+溯风: [speed=2]......
+溯风: [speed=0.5]倘若我们真的杀死了终焉，这一切便可以了结吗？
+set GameDialogueManager.able_do_something = true
+=> END
+

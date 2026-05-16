@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://00b1pcqd684d"]
+
+[ext_resource type="Script" uid="uid://mmisk7xriac2" path="res://scenes/characters/npc/level_1/VillageHead_interactable_component.gd" id="1_rbl34"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5voa"]
+radius = 28.0
+
+[node name="InteractableComponent" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_rbl34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_h5voa")
+debug_color = Color(0.872159, 0.341625, 0.179381, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

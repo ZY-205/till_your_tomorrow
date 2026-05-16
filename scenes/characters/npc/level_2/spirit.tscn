@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://dndummsyqcx13"]
+
+[ext_resource type="Texture2D" uid="uid://bt4awc88a1ltf" path="res://assets/game/characters/spirits-Sheet.png" id="1_qkox2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xex3"]
+atlas = ExtResource("1_qkox2")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iat8o"]
+atlas = ExtResource("1_qkox2")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4l2u"]
+atlas = ExtResource("1_qkox2")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tbjg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xex3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iat8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4l2u")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qkox2"]
+radius = 4.0
+
+[node name="spirit" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, -2)
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, 2)
+sprite_frames = SubResource("SpriteFrames_tbjg6")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_qkox2")

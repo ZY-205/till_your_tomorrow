@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0lgdkuqhrwpd"]
+
+[ext_resource type="Script" uid="uid://dfanuho68162v" path="res://scenes/characters/npc/level_2/spirit_guard.gd" id="1_hhc1y"]
+[ext_resource type="Texture2D" uid="uid://bt4awc88a1ltf" path="res://assets/game/characters/spirits-Sheet.png" id="1_tof2t"]
+[ext_resource type="PackedScene" uid="uid://00b1pcqd684d" path="res://script/interactable_component.tscn" id="3_k7n4j"]
+[ext_resource type="PackedScene" uid="uid://c65mg5qe5hkc5" path="res://scenes/ui/Interactive_components.tscn" id="4_x65cx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soxw5"]
+atlas = ExtResource("1_tof2t")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkhew"]
+atlas = ExtResource("1_tof2t")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3xws"]
+atlas = ExtResource("1_tof2t")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yb15m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soxw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkhew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3xws")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lyfgj"]
+radius = 4.0
+
+[node name="spirit_guard" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, -1)
+collision_layer = 2
+script = ExtResource("1_hhc1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_yb15m")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_lyfgj")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_k7n4j")]
+
+[node name="Control" parent="." instance=ExtResource("4_x65cx")]
+z_index = 2
+offset_left = -26.0
+offset_top = -34.0
+offset_right = -26.0
+offset_bottom = -34.0

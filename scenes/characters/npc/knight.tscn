@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://bc2agius45k4v"]
+
+[ext_resource type="Texture2D" uid="uid://dqq3036g76pug" path="res://assets/game/characters/knight_red-Sheet.png" id="1_cyxos"]
+[ext_resource type="Script" uid="uid://eeohe6exdfpa" path="res://scenes/characters/npc/knight.gd" id="1_xk2rj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk2rj"]
+atlas = ExtResource("1_cyxos")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrx7d"]
+atlas = ExtResource("1_cyxos")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtv4a"]
+atlas = ExtResource("1_cyxos")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rwbk"]
+atlas = ExtResource("1_cyxos")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejvtx"]
+atlas = ExtResource("1_cyxos")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qroe3"]
+atlas = ExtResource("1_cyxos")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnpb6"]
+atlas = ExtResource("1_cyxos")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ojmm"]
+atlas = ExtResource("1_cyxos")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u51kv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk2rj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrx7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtv4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rwbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejvtx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qroe3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnpb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ojmm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aymjs"]
+radius = 6.0
+
+[node name="knight" type="CharacterBody2D" groups=["knight"]]
+collision_layer = 2
+script = ExtResource("1_xk2rj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u51kv")
+animation = &"walk"
+frame = 2
+frame_progress = 0.79704
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_aymjs")

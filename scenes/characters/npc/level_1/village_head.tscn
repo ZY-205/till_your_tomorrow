@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://10c3xiavib2"]
+
+[ext_resource type="Script" uid="uid://c5hfroirt5eg8" path="res://scenes/characters/npc/level_1/village_head.gd" id="1_g1m3g"]
+[ext_resource type="Texture2D" uid="uid://b561hk7oa5esj" path="res://assets/game/characters/level_1_village_head-Sheet.png" id="1_hq5mr"]
+[ext_resource type="PackedScene" uid="uid://c65mg5qe5hkc5" path="res://scenes/ui/Interactive_components.tscn" id="2_4gply"]
+[ext_resource type="PackedScene" uid="uid://00b1pcqd684d" path="res://script/interactable_component.tscn" id="3_g1m3g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gply"]
+atlas = ExtResource("1_hq5mr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40na1"]
+atlas = ExtResource("1_hq5mr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1m3g"]
+atlas = ExtResource("1_hq5mr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7psd1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gply")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40na1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1m3g")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mri1"]
+radius = 4.0
+
+[node name="VillageHead" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_g1m3g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_7psd1")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.803358
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_1mri1")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_g1m3g")]
+
+[node name="Control" parent="." instance=ExtResource("2_4gply")]
+offset_left = -25.0
+offset_top = -36.0
+offset_right = -25.0
+offset_bottom = -36.0

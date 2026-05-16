@@ -1,0 +1,176 @@
+~ task_one
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]（这是哪里？这里就是精灵族的领地吗？）
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+精灵守卫: [speed=0.5]谁，谁在那里！
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]别紧张，我没有恶意。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+精灵守卫: [speed=0.5]你是人类？为什么要进入精灵族的领地？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]我...我是来找芙伊鸢的。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+精灵守卫: [speed=0.5]（和之前那个人类小子一样，是来找公主殿下的吗）
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+精灵守卫: [speed=0.5]那你先放下武器，我们让族长来见你。
+do GameDialogueManager.do_air_wall_removal(2)
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ task_two
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]所以，守卫大哥，为什么见族长要把我关起来？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+精灵守卫: [speed=0.5]哎，现在是特殊时期，你多多理解吧。
+精灵守卫: [speed=0.5]族长，您来了。
+族长: [speed=0.5]你们退下吧，我有话要和这位小友说。
+族长: [speed=0.5]你是来找芙伊鸢的？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]是的，打败终焉需要她的力量。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+族长: [speed=0.5]......
+族长: [speed=0.5]你可以走了。
+族长: [speed=0.5]但是芙伊鸢不会和你走。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]为什么？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+族长: [speed=0.5]芙伊鸢刚刚受伤回到这里，你就想把她带走？
+族长: [speed=0.5]连溯风都没能保护好她，你呢，你又凭什么？
+do GameDialogueManager.do_air_wall_removal(3)
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]......
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+族长: [speed=0.5]守卫，把他送出领地。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_B)
+芙伊鸢: [speed=0.5]爸爸！
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+族长: [speed=0.5]芙伊鸢，你伤好了吗？不是让你不要乱跑了吗？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_B)
+芙伊鸢: [speed=0.5]爸爸，你先走吧，我有话要和他说。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+族长: [speed=0.5]..哎...
+do GameDialogueManager.do_air_wall_removal(4)
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ task_three
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_B)
+芙伊鸢: [speed=0.5]你好，我是芙伊鸢。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]谢谢你放我出来，我是紫越。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_B)
+芙伊鸢: [speed=0.5]紫越，我直接开门见山了，你身上有溯风的气息，他人呢？他还好吗？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]他...
+紫越: [speed=0.5]他......
+紫越: [speed=0.5]在最后的时刻，他知道难以逃脱，于是把所有的力量封存在了我的体内。
+紫越: [speed=0.5]他让我来找你们，只有我们的力量可以打败终焉了。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_B)
+芙伊鸢: [speed=0.5].....
+芙伊鸢: [speed=0.2]我知道了。
+芙伊鸢: [speed=0.2]你先在村子休息一段时间吧。
+芙伊鸢: [speed=0.2]我会去说服我的父亲。
+芙伊鸢: [speed=0.2]等我准备好了，我们就去讨伐终焉。
+do GameDialogueManager.do_air_wall_removal(5)
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ 	task_three_half
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]主岛传来了什么动静？
+紫越: [speed=0.5]过去看看。
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ task_four
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+族长: [speed=0.5]你是谁？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_B)
+芙伊鸢: [speed=0.5]爸爸，让我来吧，它就是终焉亲卫。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]不，你们先走吧，我来解决它。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_B)
+芙伊鸢: [speed=0.5]...紫越，拜托你了，我把族人转移好就来帮你。
+do GameDialogueManager.do_air_wall_removal(7)
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]你就是终焉亲卫吗?
+紫越: [speed=0.5]不说话吗？
+紫越: [speed=0.5]那就动手吧。
+do GameDialogueManager.do_air_wall_removal(8)
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ task_five
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_B)
+芙伊鸢: [speed=0.5]紫越，我来助你！
+=> END
+
+~ chat_one
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]你好。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]你好。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]你就是要把公主带走的人类吗？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]...
+紫越: [speed=0.5]你可以这么认为。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]哎，族长就她一个女儿，上次那个人类来就非了很大劲
+守卫: [speed=0.5]这次公主回来还带着伤，你想带她走可就难了。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]如果我她愿意和我走，我肯定她不会受到一点伤害。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]希望你能遵守你的承诺。
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ chat_two
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]你好。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]你好。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]好久没见过人类了。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]为什么？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]我们精灵族是与世隔绝的，一般人都找不到我们的住处的。
+守卫: [speed=0.5]话说回来，你是怎么找到这里的，我听他们说你是突然出现的？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]呃，是一位朋友把我送到这的。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]这样吗。
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ chat_three
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]你好。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]你好。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]你来找公主是为了讨伐终焉？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]嗯。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]如可公主真的和你去的话，请一定保护好她。
+守卫: [speed=0.5]终焉曾经在公主出生时袭击了村子，公主的母亲为了保护公主牺牲了。
+守卫: [speed=0.5]我们虽然将终焉击退，但是我们也损失了很多族人。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]...
+紫越: [speed=0.5]我知道了，
+紫越: [speed=0.5]这个仇我会替你们报的。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.spirit)
+守卫: [speed=0.5]不，你只要保护好公主不受伤害就行了。
+set GameDialogueManager.is_dialogue = false
+=> END
+

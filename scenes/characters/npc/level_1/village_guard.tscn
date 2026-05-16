@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://v7tq008yfcu3"]
+
+[ext_resource type="Texture2D" uid="uid://ce11bo5doh0wf" path="res://assets/game/characters/level_1_village_guard-Sheet.png" id="1_mfinr"]
+[ext_resource type="Script" uid="uid://dx604sopafnsj" path="res://scenes/characters/npc/level_1/village_guard.gd" id="1_y1ar0"]
+[ext_resource type="PackedScene" uid="uid://00b1pcqd684d" path="res://script/interactable_component.tscn" id="2_e2uaf"]
+[ext_resource type="PackedScene" uid="uid://c65mg5qe5hkc5" path="res://scenes/ui/Interactive_components.tscn" id="3_y1ar0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyo4a"]
+atlas = ExtResource("1_mfinr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2uaf"]
+atlas = ExtResource("1_mfinr")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1ar0"]
+atlas = ExtResource("1_mfinr")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gfcw8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyo4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2uaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1ar0")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x0s42"]
+radius = 4.0
+
+[node name="VillageGuard" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_y1ar0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gfcw8")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.168574
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_x0s42")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("2_e2uaf")]
+
+[node name="Control" parent="." instance=ExtResource("3_y1ar0")]
+offset_left = -27.0
+offset_top = -36.0
+offset_right = -27.0
+offset_bottom = -36.0

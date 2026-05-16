@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://b40y0trp1tsrr"]
+
+[ext_resource type="TileSet" uid="uid://boib5ovnj7jfn" path="res://tilesets/game_base_tilesets.tres" id="1_li3l1"]
+
+[node name="level_3" type="Node2D"]
+
+[node name="tilemap" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="water" type="TileMapLayer" parent="tilemap"]
+y_sort_enabled = true
+position = Vector2(1, 0)
+tile_set = ExtResource("1_li3l1")
+
+[node name="grass" type="TileMapLayer" parent="tilemap"]
+y_sort_enabled = true
+tile_set = ExtResource("1_li3l1")
+
+[node name="bridge" type="TileMapLayer" parent="tilemap"]
+z_index = 1
+y_sort_enabled = true
+tile_set = ExtResource("1_li3l1")
+
+[node name="objects" type="TileMapLayer" parent="tilemap"]
+z_index = 1
+y_sort_enabled = true
+tile_set = ExtResource("1_li3l1")
+
+[node name="plants" type="TileMapLayer" parent="tilemap"]
+z_index = 1
+y_sort_enabled = true
+tile_set = ExtResource("1_li3l1")

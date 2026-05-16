@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3b4baocu5jok"]
+
+[ext_resource type="Texture2D" uid="uid://dy5muxcytk65t" path="res://assets/game/characters/test2.png" id="1_0cadu"]
+[ext_resource type="Script" uid="uid://byvt1j43b4bsy" path="res://scenes/characters/guide/guide.gd" id="1_wpvng"]
+[ext_resource type="Script" uid="uid://cplsov73sc3em" path="res://scenes/characters/guide/interactable_component.gd" id="3_yhqkc"]
+[ext_resource type="PackedScene" uid="uid://c65mg5qe5hkc5" path="res://scenes/ui/Interactive_components.tscn" id="4_r5pwe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of163"]
+atlas = ExtResource("1_0cadu")
+region = Rect2(144, 180, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opus4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of163")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5s6bv"]
+radius = 25.0
+
+[node name="Guide" type="Node2D"]
+script = ExtResource("1_wpvng")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -10)
+sprite_frames = SubResource("SpriteFrames_opus4")
+flip_h = true
+
+[node name="InteractableComponent" type="Area2D" parent="."]
+collision_mask = 9
+script = ExtResource("3_yhqkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_5s6bv")
+
+[node name="interactable_label_component" parent="." instance=ExtResource("4_r5pwe")]
+offset_left = -25.0
+offset_top = -37.0
+offset_right = -25.0
+offset_bottom = -37.0
+
+[connection signal="body_entered" from="InteractableComponent" to="InteractableComponent" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractableComponent" to="InteractableComponent" method="_on_body_exited"]

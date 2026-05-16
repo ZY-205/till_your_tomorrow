@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://72pjscwx6dai"]
+
+[ext_resource type="Texture2D" uid="uid://blwmrhdb1m5ay" path="res://assets/game/characters/knight_green-Sheet.png" id="1_qadvn"]
+[ext_resource type="Script" uid="uid://14ilrq7bc4ij" path="res://scenes/characters/knight/sword_wave.gd" id="2_tt12t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt12t"]
+atlas = ExtResource("1_qadvn")
+region = Rect2(418, 825, 12, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pujq4"]
+size = Vector2(12, 20)
+
+[node name="Sprite2D" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_tt12t")
+script = ExtResource("2_tt12t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pujq4")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

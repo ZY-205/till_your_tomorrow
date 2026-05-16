@@ -1,0 +1,103 @@
+~ village_head_1
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.level_1_village_head)
+村长: [speed=0.5]紫越，你醒了啊，我正好有事找你。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]怎么了村长，需要我做什么。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.level_1_village_head)
+村长: [speed=0.5]今天早些时候森林那边传来了一些响动，你可以去查看一下吗？
+- 好的，我现在去看看
+	do GameDialogueManager.do_air_wall_removal(1)
+- 等会，我还有一些事情要忙
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ village_head_2
+set GameDialogueManager.is_dialogue = true
+村长: [speed=0.5]准备好了吗？
+- 好的，我现在去看看
+	do GameDialogueManager.do_air_wall_removal(1)
+- 等会，我还有一些事情要忙
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ village_guard
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.level_1_village_guard)
+警卫: [speed=0.5]最近“终焉”的手下活动频繁，你外出的时候一定要十分小心。
+警卫: [speed=0.5]对了，村长好像在找人做事，你可以去看看。
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ task_one_1
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]这里没发现什么异常。
+do GameDialogueManager.do_air_wall_removal(2)
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ task_one_2
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.5]村子出什么事了？
+set GameDialogueManager.is_dialogue = false
+=> END
+
+
+~ task_two
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_D)
+溯风: [speed=0.5]大家，都躲到我身后来。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_C)
+玥璃: [speed=0.5]这是，终焉的亲卫吗。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_B)
+芙伊鸢: [speed=0.5]大家小心，它们的气息不对劲！
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_D)
+溯风: [speed=0.5]快走！他要自爆。
+do GameDialogueManager.do_air_wall_removal(3)
+set GameDialogueManager.is_dialogue = false
+=> END
+
+~ task_three
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_D)
+溯风: [speed=0.2]该死的！
+溯风: [speed=0.2]伤势太重了。
+溯风: [speed=0.2]该怎么办？
+溯风: [speed=0.2]等会，他好像还有一口气。
+溯风: [speed=0.2]只能这样了吗。
+溯风: [speed=0.2]带着我的那份，走下去吧！
+do GameDialogueManager.do_air_wall_removal(4)
+set GameDialogueManager.is_dialogue = false
+=> END
+
+
+~ task_four
+set GameDialogueManager.is_dialogue = true
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_D)
+溯风: [speed=0.2]你醒了啊。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.2]你是谁？这是哪里？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_D)
+溯风: [speed=0.2]...
+溯风: [speed=0.2]我是溯风，也是风的孩子。
+溯风: [speed=0.2]这里是你的精神空间。
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.player)
+紫越: [speed=0.2]我的精神空间？什么意思？
+do GameDialogueManager.emo_change(GameDialogueManager.EmoState.patner_D)
+溯风: [speed=0.2]别急，听我说完。
+溯风: [speed=0.2]我和我的伙伴们是讨伐终焉的小队。
+溯风: [speed=0.2]就在今天路过你们村子的时候，我们遭遇了终焉亲卫的阻击。
+溯风: [speed=0.2]亲卫直接自爆了一位，我在逃离的时候，本以为再无希望，但是
+溯风: [speed=0.2]我发现了奄奄一息的你。
+溯风: [speed=0.2]我定然逃不出亲卫的追击，所以我把所有的能力封存在了你的体内。
+溯风: [speed=0.2]如果我猜的不错，我现在应该死在终焉亲卫的刀下了。
+溯风: [speed=0.2]但是我把希望的火种留存在你的身上，我们就没有输。
+溯风: [speed=0.2]时间不多了...
+溯风: [speed=0.2]去找到我的三位伙伴。
+溯风: [speed=0.2]只有四人的力量可以杀死终焉。
+溯风: [speed=0.2]可以帮我，做到我未做到的事吗？
+do GameDialogueManager.do_air_wall_removal(5)
+set GameDialogueManager.is_dialogue = false
+=> END

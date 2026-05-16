@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://rcuk1r4mbht4"]
+
+[ext_resource type="Script" uid="uid://c3kxrm5d7rtdu" path="res://scenes/ui/target_location.gd" id="1_4a6nk"]
+[ext_resource type="PackedScene" uid="uid://c65mg5qe5hkc5" path="res://scenes/ui/Interactive_components.tscn" id="1_nnsfc"]
+[ext_resource type="Script" uid="uid://cigvho2qauvnh" path="res://scenes/ui/target_location_interactable_component.gd" id="4_q6832"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4a6nk"]
+radius = 225.056
+
+[node name="target_location" type="Node2D"]
+script = ExtResource("1_4a6nk")
+
+[node name="Control" parent="." instance=ExtResource("1_nnsfc")]
+offset_left = -113.0
+offset_top = -112.0
+offset_right = -113.0
+offset_bottom = -112.0
+
+[node name="InteractableComponent" type="Area2D" parent="."]
+script = ExtResource("4_q6832")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_4a6nk")
+debug_color = Color(0.865963, 0.344639, 0.235394, 0.42)
+
+[connection signal="body_entered" from="InteractableComponent" to="InteractableComponent" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractableComponent" to="InteractableComponent" method="_on_body_exited"]

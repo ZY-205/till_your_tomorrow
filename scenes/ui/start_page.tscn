@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddbrgu2ce3a6s"]
+
+[ext_resource type="Theme" uid="uid://cfohgl17ryjkp" path="res://dialogue/dialogue_balloon_theme.tres" id="1_dxbbc"]
+[ext_resource type="FontFile" uid="uid://dxvectj5qwd1j" path="res://assets/ui/fonts/zx_palm.ttf" id="2_iqyqc"]
+[ext_resource type="Script" uid="uid://bvaa0wrlr8foe" path="res://scenes/ui/start_page.gd" id="2_pmsna"]
+
+[node name="Control" type="CanvasLayer"]
+
+[node name="start_page" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_dxbbc")
+script = ExtResource("2_pmsna")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="start_page"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = 29.0
+offset_right = 187.5
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start" type="Button" parent="start_page/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqyqc")
+theme_override_font_sizes/font_size = 16
+text = "开始"
+
+[node name="load" type="Button" parent="start_page/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqyqc")
+theme_override_font_sizes/font_size = 16
+text = "加载"
+
+[node name="info" type="Button" parent="start_page/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqyqc")
+theme_override_font_sizes/font_size = 16
+text = "信息"
+
+[node name="quit" type="Button" parent="start_page/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqyqc")
+theme_override_font_sizes/font_size = 16
+text = "退出"
+
+[connection signal="pressed" from="start_page/VBoxContainer/start" to="start_page" method="_on_start_pressed"]
+[connection signal="pressed" from="start_page/VBoxContainer/load" to="start_page" method="_on_load_pressed"]
+[connection signal="pressed" from="start_page/VBoxContainer/info" to="start_page" method="_on_info_pressed"]
+[connection signal="pressed" from="start_page/VBoxContainer/quit" to="start_page" method="_on_quit_pressed"]

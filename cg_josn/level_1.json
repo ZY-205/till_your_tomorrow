@@ -1,0 +1,26 @@
+{
+	"scene":"/root/level_1/npc/partner/",
+	"characters":["partner_A","partner_B","partner_C","partner_D","knight_purple","partner_D/Camera2"],
+	"content":[
+		{"stage":3,
+		"action":[
+			{"who":"knight_purple","action":"do","what":"play","parameter":["Attack_knight_pruple"],"timekeep":0},
+			{"who":"partner_A","action":"do","what":"play","parameter":["Walk_A"],"timekeep":0},
+			{"who":"partner_A","action":"do","what":"move","parameter":[-100,0,5],"timekeep":0},
+			{"who":"partner_A","action":"set","what":["flip_h"],"parameter":["true"],"timekeep":0},
+			{"who":"partner_B","action":"do","what":"play","parameter":["Walk_B"],"timekeep":0},
+			{"who":"partner_B","action":"do","what":"move","parameter":[-100,0,5],"timekeep":0},
+			{"who":"partner_B","action":"set","what":["flip_h"],"parameter":["true"],"timekeep":0},
+			{"who":"partner_C","action":"do","what":"play","parameter":["Walk_C"],"timekeep":0},
+			{"who":"partner_C","action":"do","what":"move","parameter":[-100,0,5],"timekeep":0},
+			{"who":"partner_C","action":"set","what":["flip_h"],"parameter":["true"],"timekeep":0},
+			{"who":"","action":"wait","what":"","parameter":[""],"timekeep":1},
+			{"who":"partner_D","action":"do","what":"play","parameter":["Defense_D"],"timekeep":0},
+			{"who":"partner_D/Camera2","action":"do","what":"start_shake","parameter":[4,5],"timekeep":0},
+			{"who":"","action":"wait","what":"","parameter":[""],"timekeep":2},
+			{"who":"knight_purple","action":"do","what":"boom","parameter":[15,15,2],"timekeep":0},
+			{"who":"","action":"wait","what":"","parameter":[""],"timekeep":5},
+			]},
+		
+	]
+}

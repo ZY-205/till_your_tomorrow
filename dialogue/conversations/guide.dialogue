@@ -1,0 +1,12 @@
+~ start
+向导：您好，很感谢您能做一次测试
+向导：这里是游戏的测试demo，我在这里会向您展示一些已经做好的功能。
+向导：WASD对应移动，鼠标的左右键为不同的攻击方式。
+向导：空格对应闪避，R是你的技能。
+向导：测试内容不代表最终品质。
+向导：再次感谢测试，你准备好了吗？
+- 准备好了
+	set GameDialogueManager.is_monster_generation = true
+	set GameDialogueManager.able_attack = true
+- 再等等
+=> END
